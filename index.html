@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sirjan Nishad - AI & Web Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js and GSAP for animations (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">SN</a>
+            
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#profiles" class="nav-link">Profiles</a></li>
+                    <li><a href="#resume" class="nav-link">Resume</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div id="threejs-container"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sirjan Nishad</h1>
+            <p class="hero-subtitle">AI Engineer & Full-Stack Developer</p>
+            <div class="typing-text" id="typing-text"></div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Let's Connect</span>
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <span>View Work</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-container">
+                    <div class="about-text">
+                        <p>I'm a passionate B.Tech AIML student at PSIT, dedicated to pushing the boundaries of artificial intelligence and web development. My journey involves creating intelligent solutions that bridge human needs with cutting-edge technology.</p>
+                        
+                        <p>From developing advanced voice assistants with AI integration to building scalable web applications, I thrive on solving complex problems and creating meaningful digital experiences.</p>
+                        
+                        <p>When I'm not coding, you'll find me exploring the latest AI research, contributing to open-source projects, or experimenting with new technologies that shape our digital future.</p>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="4">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title">Frontend Development</h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">React.js</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript (ES6+)</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">CSS</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">AI & Machine Learning</h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">API Integration</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Backend</h3>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Node.js</span>
+                                <span class="skill-level">87%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="87"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            🤖
+                            <div class="project-overlay">
+                                <a href="https://team-project-e4hy.onrender.com/" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">VoteBuddy - Personalized Voting Guide </h3>
+                            <p class="project-description">“VoteBuddy helps citizens create personalized voting plans, making democracy simpler and smarter.An AI-powered civic engagement app designed to guide voters every step of the way.”</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            ♻️
+                            <div class="project-overlay">
+                                <a href="https://plastic-waste-tracker.onrender.com/" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">PlastiSat-A Plastic Detection System</h3>
+                            <p class="project-description">A full-stack Plastic Detection website featuring YOLOV8, Python, 4 of dummy nasa satellites, and a secure checkout process, built with the html,css and js for scalability.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Render</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            👁️
+                            <div class="project-overlay">
+                                <a href="https://traveldiaries-2q95.onrender.com/" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Wanderlust - Travel Diaries</h3>
+                            <p class="project-description">A responsive travel website designed to highlight popular destinations and inspire exploration. Built with HTML, CSS, and JavaScript, and deployed on Render for seamless hosting.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section id="certificates" class="section">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certificates-grid">
+                    <!-- Certificate Card 1 -->
+                    <div class="certificate-card">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9a9.75 9.75 0 0 1 0-13.5h9a9.75 9.75 0 0 1 0 13.5Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75h6" /></svg>
+                        </div>
+                        <h3 class="cert-title">Hackverse</h3>
+                        <p class="cert-issuer">SILICON HACK CLUB</p>
+                        <a href="assets/HackVerse-certificate.pdf" class="cert-link">View Certificate &rarr;</a>
+                    </div>
+                    <!-- Certificate Card 2 -->
+                    <div class="certificate-card">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
+                        </div>
+                        <h3 class="cert-title">Career Essentials in Generative AI </h3>
+                        <p class="cert-issuer">By Microsoft and LinkedIn</p>
+                        <a href="assets/genai.pdf" class="cert-link">View Certificate &rarr;</a>
+                    </div>
+                    <!-- Certificate Card 3 -->
+                    <div class="certificate-card">
+                        <div class="cert-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.745 3.745 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" /></svg>
+                        </div>
+                        <h3 class="cert-title">AWS Cloud Practitioner Essentials</h3>
+                        <p class="cert-issuer">AWS</p>
+                        <a href="assets/aws certificate.pdf" class="cert-link">View Certificate &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NEW: Profiles Section -->
+            <section id="profiles" class="section">
+                <h2 class="section-title">My Profiles</h2>
+                <div class="profiles-grid">
+                    <a href="https://leetcode.com/u/SirjanNi/" target="_blank" class="profile-card">
+                        <div class="profile-icon">📊</div>
+                        <h3 class="profile-title">LeetCode</h3>
+                        <p class="profile-desc">Problem-solving and coding challenges</p>
+                    </a>
+                    <a href="https://www.hackerrank.com/profile/SirjanNishad" target="_blank" class="profile-card">
+                        <div class="profile-icon">💻</div>
+                        <h3 class="profile-title">HackerRank</h3>
+                        <p class="profile-desc">Coding practice and certifications</p>
+                    </a>
+                    <a href="https://github.com/Sirjan-74" target="_blank" class="profile-card">
+                        <div class="profile-icon">📂</div>
+                        <h3 class="profile-title">GitHub</h3>
+                        <p class="profile-desc">Open-source contributions and repositories</p>
+                    </a>
+                    <a href="https://devpost.com/2k23-psitaiml2311741" target="_blank" class="profile-card">
+                        <div class="profile-icon">🏆</div>
+                        <h3 class="profile-title">Devpost</h3>
+                        <p class="profile-desc">Hackathon projects and submissions</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Resume Section -->
+            <section id="resume" class="section">
+                <div class="resume-container">
+                    <h2 class="section-title">My Resume</h2>
+                    <p class="resume-text">
+                        Interested in a more detailed look at my skills and experience? Download my full resume to see how I can contribute to your team.
+                    </p>
+                    <a href="assets/resume2k25.pdf" download="Sirjan_Nishad_Resume.pdf" class="btn btn-primary btn-large">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; height: 24px;">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                        </svg>
+                        <span>Download Resume</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Let's build something amazing together.</h3>
+                        <p>I'm currently available for freelance work and open to discussing new projects. Feel free to reach out!</p>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                            <span>sirjannishad74@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" /></svg>
+                            <span>Kanpur, India</span>
+                        </div>
+                    </div>
+                                        
+                    <form id="contact-form" 
+      class="contact-form" 
+      action="https://formsubmit.co/sirjannishad74@gmail.com" 
+      method="POST">
+    
+    <!-- Make sure your email is spelled EXACTLY right in the line above -->
+
+    <!-- FormSubmit Settings -->
+    <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission!">
+    <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html">
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Your form fields -->
+    <div class="form-group">
+        <!-- CRITICAL: Make sure each input has a "name" attribute -->
+        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+        <label for="name" class="form-label">Your Name</label>
+    </div>
+    <div class="form-group">
+        <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
+        <label for="email" class="form-label">Your Email</label>
+    </div>
+    <div class="form-group">
+        <textarea id="message" name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+        <label for="message" class="form-label">Your Message</label>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width: 100%;">
+        <span>Send Message</span>
+    </button>
+</form>                    
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Sirjan Nishad. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Floating Action Button -->
+    <button class="fab" id="fab" aria-label="Scroll to top">🔝</button>
+
+    <!-- Success Message -->
+    <div class="success-message" id="success-message">Message sent successfully!</div>
+    
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
